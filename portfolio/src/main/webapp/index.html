@@ -10,27 +10,108 @@
   <body>
     <div class="topnav">
         <a class="Navbar-Name"> Krishna Kariya </a>
-        <a href="https://github.com/Krishnakariya" class="Navbar-button"> <i class="fa fa-fw fa-github"></i>Github </a>
-        <a href="https://www.linkedin.com/in/krishna-kariya-225a93151/" class="Navbar-button"> <i class="fa fa-fw fa-linkedin"></i>LinkedIn </a>
-        <a href="#contact" class="Navbar-button"><i class="fa fa-fw fa-envelope"></i>Contact</a>
-        <a href="#home" class="Navbar-button"><i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="https://github.com/Krishnakariya" class="Navbar-button"> <i class="fa fa-fw fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/krishna-kariya-225a93151/" class="Navbar-button"> <i class="fa fa-fw fa-linkedin"></i></a>
+        <a href="#contact" class="Navbar-button"><i class="fa fa-fw fa-envelope"></i></a>
+        <a href="#home" class="Navbar-button"><i class="fa fa-fw fa-home"></i></a>
     </div>
-    
-    <div id="content">
-      <h1>About Me</h1>
-      <p> 
-        I am Krishna Kariya. I am a student at IIIT-Delhi, pursuing Btech in computer science
-        and engineering (CSE). My area of interest include Data Structures, Algorithms, Program Analysis 
-        and Verification, Logic, Web Development. Other than that, I like to play badminton, and 
-        games on mobile.
-      </p>
-      <h1> Experience</h1>
-        <h2> Microsoft </h2>
-        <h3> Software Engineer Intern </h3>
+    <h1>About Me</h1>    
+    <div class="About_Me">
+        <div class="My_Image">
+            <img src="images/photo_krishna.jpeg"  height="300px" width="300px" align="top">
+        </div>
+        <div class="Introduction">
+            <p> 
+                I am an undergrad student at IIIT-Delhi studying computer science
+                and engineering (CSE). My areas of interest include Algorithms, Data Structures, Program Analysis 
+                and Verification, Compilers, Logic and Web Development. 
+                I like to implement and debug applications developed in c, c++ and java programming languages.
+                I like solving puzzles and algorithmic challenges. 
+                Beyond Academics, I enjoy playing badminton and games on mobile.
+            </p>
+        </div>
+    </div>
+    <div class="Experience">
+    <h1> Experience</h1>
+    <h3> <i class="fa fa-fw fa-windows"></i> Microsoft </h3>
+    <!-- <img src="images/Microsoft-Logo.jpg" height="100px" width="200px" >  -->
+    <ul>
+        <li> Worked in the Incentive Compensation Team to 
+            integrate PWA and Push Notification in their web application. </li>
+        <li> Learned about Agile Processes And Practices </li>
+        <li> Worked with REST APIs, SQL, Angular, C, Asp.Net, Typescript, 
+            and deployment tools like Azure. </li>
+    </ul>
+    </div>
+    <div class="Projects">
+      <h1> Relevant Projects </h1>
+        <h3>SafeC [Code] </h3>
         <ul>
-            <li> Worked in the Incentive Compensation Team to integrate PWA and Push Notification in their web application. </li>
-            <li> Worked with REST APIs, SQL, Angular, C, Asp.Net, Typescript, and deployment tools like Azure. </li>
+            <li> Compiler Design course project. Implement memory (both temporal and spatial) and
+                type safety in the LLVM compiler for C language. </li>
+            <li> The project includes implementing various Data Flow and Control Flow analysis passes
+                to catch null pointer dereference, Array-Out-Of-Bound and invalid Dynamic Type-cast. </li>
+            <li> Another part of the project is to implement a conservative Garbage Collection in C. </li>
         </ul>
+        <h3>Sat Solver Project [Code] </h3>
+        <ul>
+            <li> Implemented various modern optimizations present in modern CDCL SAT Solvers on
+                top of an educational sat solver ”EDUSAT”. </li>
+            <li> This optimization improved the performance of EDUSAT by nearly 5 times (tested on
+                benchmarks from recent SAT solver competition). </li>
+        </ul>
+        <h3> Xv6 Paging Project [Code] [Report] </h3>
+        <ul>
+            <li>    Implemented demand paging and swapping in xv6 (an instructional OS).        </li>
+            <li>    Worked on virtual memory subsystem and disk subsystem of xv6.        </li>
+            <li>    The modified code supported on demand allocation and mapping of physical pages to corresponding virtual
+                    pages at the time of virtual memory dereferencing        </li>
+        </ul>
+        <h3> Social Networking Website [Code] </h3>
+        <ul>
+            <li> Made a secure Social Networking Website with features like friends, groups, posts, chat, commercial pages. </li>
+        </ul>
+        <h3> Shell Project [Code]</h3>
+        <ul>
+            <li>Developed a shell in C language. It includes features like nested pipes, I/O redirection and receiving signals.</li>
+            <li>The source code includes system calls like fork, exec, pipe, dup, open, read, write, close, signal. </li>
+            <li>Implemented a parser to receive user commands and used system calls to execute them. </li>
+        </ul>
+        <h3> Snake vs Block Game [Code]</h3>
+        <ul>
+            <li> Advanced programming project based on JavaFX GUI. Worked in a team of two to make a GUI desktop application. </li>
+            <li> The source code involved concepts of Multi-Threading, Event-Driven Programming, File I/O, Design Patterns and Serialization.</li>
+        </ul>
+    </div>
+    <div class="Skills">
+        <h1> Skills </h1>
+        <img src="images/angular.png" height="50px" width="100px" style="margin:0px 15px">
+        <img src="images/asp.net.jpg" height="50px" width="100px" style="margin:0px 15px">
+        <img src="images/c_c++.jpg" height="50px" width="100px" style="margin:0px 15px">
+        <img src="images/django.png" height="50px" width="100px" style="margin:0px 15px">
+        <img src="images/git.png" height="50px" width="100px" style="margin:0px 15px">
+        <br>
+        <img src="images/Java.jpg" height="50px" width="100px" style="margin:0px 15px">
+        <img src="images/llvm.png" height="50px" width="100px" style="margin:0px 15px">
+        <img src="images/mysql.png" height="50px" width="100px" style="margin:0px 15px">
+        <img src="images/python.png" height="50px" width="100px" style="margin:0px 15px">
+        <img src="images/Azure.jpg" height="50px" width="100px" style="margin:0px 15px">
+
+    </div>
+    <div class="Courses">
+    <h1> Courses </h1>
+    <ul>
+        <li>Compilers</li>
+        <li>Program Analysis</li>
+        <li>Decision Procedures</li>
+        <li>Machine Learning</li>
+        <li>Computer Security</li>
+        <li>Operating Systems</li>
+        <li>Database Management Systems</li>
+        <li>Modern Algorithm Design</li>
+        <li>Quantum Computing</li>
+        <li>Computer Networks</li> 
+    </ul>
     </div>
   </body>
 </html>
