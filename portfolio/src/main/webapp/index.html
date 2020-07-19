@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getComments()">
     <div class="topnav">
         <a class="Navbar-Name"> Krishna Kariya </a>
         <a href="https://github.com/Krishnakariya" class="Navbar-button"> <i class="fa fa-fw fa-github"></i></a>
@@ -16,8 +16,8 @@
         <a href="#home" class="Navbar-button"><i class="fa fa-fw fa-home"></i></a>
     </div>
     <h1>About Me</h1>    
-    <div class="About_Me">
-        <div class="My_Image">
+    <div class="About-Me">
+        <div class="My-Image">
             <img src="images/photo_krishna.jpeg"  height="300px" width="300px" align="top">
         </div>
         <div class="Introduction">
@@ -112,6 +112,26 @@
         <li>Quantum Computing</li>
         <li>Computer Networks</li> 
     </ul>
+    </div>
+    <div id="comment-container">
+      <h1> Comments </h1>
+        <p> Please share your comments. </p>
+        <form action="/data" method="POST">
+            <div class="Commentor">
+                <label for="name"> Name </label>
+                <input type="text" id="name" name="commentor" placeholder="Enter your name.">
+            </div>
+            <br>
+            <div class="Comment">
+                <label for="comment"> Comment </label>
+                <input type="text" id="comment" name="comment" placeholder="Enter your comment.">
+            </div>
+            <br/><br/>
+            <input type="submit" />
+        </form>
+        <br/><br/> 
+        <hr>
+        <div id="Comments"> </div>
     </div>
   </body>
 </html>
