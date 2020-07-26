@@ -14,6 +14,11 @@
 
 package com.google.sps.servlets;
 
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
+
+import com.google.sps.Comment;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -33,18 +38,28 @@ public class DataServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     ArrayList<Comment> comments = new ArrayList<>();
+    String languageCode = request.getParameter("languageCode");
+    Translate translate = TranslateOptions.getDefaultInstance().getService();
     Query query = new Query("Comment");
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);   
+    
     for (Entity entity : results.asIterable()) {
       Comment comment = new Comment();
       long id = entity.getKey().getId();
       comment.commentor = (String) entity.getProperty("name");
-      comment.comment = (String) entity.getProperty("comment");
+      String originalText =  (String) entity.getProperty("comment");
+    //   System.out.println(originalText);
+    //   System.out.println(languageCode);
+      Translation translation =
+        translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
+      comment.comment = translation.getTranslatedText();;
+    //   System.out.println(comment.comment);
       comments.add(comment);
     }
     String json = convertToJsonUsingGson(comments);
     response.setContentType("application/json;");
+    response.setCharacterEncoding("UTF-8");
     response.getWriter().println(json);
   }
 
@@ -74,10 +89,4 @@ public class DataServlet extends HttpServlet {
     return json;
   }
 
-}
-
-
-class Comment{
-    public String commentor;
-    public String comment;
 }

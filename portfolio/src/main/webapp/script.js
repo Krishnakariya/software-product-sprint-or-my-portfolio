@@ -27,8 +27,14 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
+// 
 function getComments() {
-    fetch('/data').then(response => response.json()).then((comments) => {
+    const languageCode = document.getElementById('language').value;
+    var url = new URL('https://kkariya-sps-summer20.el.r.appspot.com/data');
+    url.searchParams.append('languageCode', languageCode);
+    fetch(url,{
+        method: 'GET'
+    }).then(response => response.json()).then((comments) => {
         const CommentElement = document.getElementById("Comments");
         CommentElement.innerText = '';
         comments.forEach(comment => {

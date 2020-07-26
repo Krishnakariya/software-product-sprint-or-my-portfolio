@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getComments()">
+  <body>
     <div class="topnav">
         <a class="Navbar-Name"> Krishna Kariya </a>
         <a href="https://github.com/Krishnakariya" class="Navbar-button"> <i class="fa fa-fw fa-github"></i></a>
@@ -131,7 +131,19 @@
         </form>
         <br/><br/> 
         <hr>
-        <div id="Comments"> </div>
+        <div id="view-comments">
+            <p>Please select a preferred language for viewing comments</p>
+            <select id="language" onchange="getComments()">
+                <option value="" disabled selected style="display:none;">Select Preferred Language</option>
+                <option value="en">English</option>
+                <option value="zh">Chinese</option>
+                <option value="es">Spanish</option>
+                <option value="hi">Hindi</option>
+                <option value="ar">Arabic</option>
+                <option value="gu">Gujarati</option>
+            </select>
+            <div id="Comments"> </div>
+        </div>
     </div>
   </body>
 </html>
