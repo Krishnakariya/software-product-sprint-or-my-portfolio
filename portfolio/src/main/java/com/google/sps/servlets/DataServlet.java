@@ -45,16 +45,13 @@ public class DataServlet extends HttpServlet {
     PreparedQuery results = datastore.prepare(query);   
     
     for (Entity entity : results.asIterable()) {
-      Comment comment = new Comment();
       long id = entity.getKey().getId();
-      comment.commentor = (String) entity.getProperty("name");
+      String commenter = (String) entity.getProperty("name");
       String originalText =  (String) entity.getProperty("comment");
-    //   System.out.println(originalText);
-    //   System.out.println(languageCode);
       Translation translation =
         translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
-      comment.comment = translation.getTranslatedText();;
-    //   System.out.println(comment.comment);
+      String translatedComment = translation.getTranslatedText();;      
+      Comment comment = new Comment(commenter, translatedComment);
       comments.add(comment);
     }
     String json = convertToJsonUsingGson(comments);
@@ -65,15 +62,11 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    Comment Tempcomment = new Comment();
-    Tempcomment.commentor = request.getParameter("commentor");
-    Tempcomment.comment = request.getParameter("comment");
+    Comment Tempcomment = new Comment(request.getParameter("commentor"),  request.getParameter("comment"));
     String json = convertToJsonUsingGson(Tempcomment);
-   // comments.add(Tempcomment);
-
     Entity commentEntity = new Entity("Comment");
-    commentEntity.setProperty("name", Tempcomment.commentor);
-    commentEntity.setProperty("comment", Tempcomment.comment);
+    commentEntity.setProperty("name", Tempcomment.getCommenter());
+    commentEntity.setProperty("comment", Tempcomment.getComment());
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(commentEntity);
 
