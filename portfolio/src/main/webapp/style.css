@@ -1,9 +1,107 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+body h2, h3{
+    text-align: left;
+    font-style: italic;
+    color: #00008B;
 }
+
+body h1{
+    color: #00008B;
+}
+/* .About_Me{
+    margin-block-start: 100px;
+    margin-block-end: 150px;
+} */
+
+.About_Me{
+    /* margin-block-start: 0px;
+    margin-block-end: 50px; */
+    overflow: auto;
+}
+
+/* .Experience{
+    margin-block-start: 50px;
+    margin-block-end: 140px;
+}
+
+.Projects{
+    margin-block-start: 200px;
+    margin-block-end: 300px;
+}
+
+.Courses{
+    margin-block-start: 300px;
+    margin-block-end: 400px;
+} */
 
 #greeting-container {
   margin-top: 20px;
+}
+
+body {
+  /* padding-left: 100px;
+  padding-right: 200px; */
+  /* width: 700px; */
+  padding: 1%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #00008B;
+  /* padding-top: 15px; */
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.topnav a.Navbar-Name{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.topnav a.Navbar-button {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
 }

@@ -26,3 +26,28 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+// 
+function getComments() {
+    const languageCode = document.getElementById('language').value;
+    var url = new URL('https://kkariya-sps-summer20.el.r.appspot.com/data');
+    url.searchParams.append('languageCode', languageCode);
+    fetch(url,{
+        method: 'GET'
+    }).then(response => response.json()).then((comments) => {
+        const CommentElement = document.getElementById("Comments");
+        CommentElement.innerText = '';
+        comments.forEach(comment => {
+            CommentElement.appendChild(createParagraphElement(comment.commentor.bold() + ": \" " + comment.comment + "  \""));
+        })
+        console.log(comments);
+    });
+}
+
+
+function createParagraphElement(text)
+{
+    const PElement = document.createElement('p');
+    PElement.innerHTML = text;
+    return PElement;
+}
